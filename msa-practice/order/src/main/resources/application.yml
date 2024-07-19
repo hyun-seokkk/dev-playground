@@ -1,0 +1,32 @@
+server:
+  port: 0
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3308/order?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: admin
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    defer-datasource-initialization: true
+    properties:
+      hibernate.format_sql: true
+      dialect: org.hibernate.dialect.MySQL8InnoDBDialect
+  application:
+    name: user-service
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
