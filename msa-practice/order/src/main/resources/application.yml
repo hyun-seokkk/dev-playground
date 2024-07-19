@@ -17,7 +17,7 @@ spring:
       hibernate.format_sql: true
       dialect: org.hibernate.dialect.MySQL8InnoDBDialect
   application:
-    name: user-service
+    name: order-service
 
 eureka:
   client:
